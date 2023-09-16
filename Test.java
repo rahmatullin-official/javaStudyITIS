@@ -4,19 +4,24 @@ import java.lang.Math;
 
 public class Test {
     public static void main(String[] args) {
-       int [] arr = new int[75];
-       int [] y = new int[75];
-       int counter = 0;
-       for (int i = 0; i < 75; i++){
-           double rand = Math.random() * 45 - 5;
-           arr[i] = (int)rand;
-           if (arr[i] < 20) {
-               y[counter] = arr[i];
-               counter += 1;
-           }
-       }
-       for(int i = 0; i < 75; i++){
-           System.out.print(y[i] + " ");
-       }
+        int[] s = new int[26];
+        int[][] matrix = new int[2][13];
+
+        for (int i = 0; i < 26; i++){
+            int rand = (int) (Math.random() * 100);
+            s[i] = rand;
+        }
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 13; j++) {
+                matrix[i][j] = s[i + j];
+            }
+        }
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 13; j++){
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
     }
 }
