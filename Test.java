@@ -3,15 +3,20 @@ import java.lang.Math;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int N = scan.nextInt();
-        for (int i = 100; i < 1000; i++){
-            int firstDigit = i / 100;
-            int secondDigit = i % 100 / 10;
-            int thirdDigit = i % 10;
-            if ((firstDigit + secondDigit + thirdDigit) == N){
-                System.out.println(i);
-            }
+       int [] arr = new int[100];
+       int N = 2;
+       for(int i = 0; i < 100; i++){
+           if (i % 2 == 0){
+                arr[i] = N;
+           }
+           else{
+               arr[i] = N - 1;
+               N += 2;
+           }
+       }
+        for(int i = 0; i < 100; i++){
+            System.out.print(arr[i] + " ");
         }
+
     }
 }
